@@ -6,11 +6,118 @@
     <title>@ViewData["Title"] - AndradeR_LigaPro_Clase03</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AndradeR_LigaPro_Clase03.styles.css" asp-append-version="true" />
+    <style>
+        /* Fondo general de la página */
+        body {
+            background: linear-gradient(to bottom, #00274d, #004080); /* Gradiente azul oscuro */
+            color: #ffffff; /* Texto blanco */
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo del encabezado */
+        .navbar {
+            background-color: #00274d; /* Azul oscuro */
+            border-bottom: 2px solid #ffcc00; /* Dorado */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .navbar-brand {
+            color: #ffcc00 !important; /* Texto dorado */
+            font-weight: bold;
+        }
+
+        .navbar .nav-link {
+            color: #ffffff !important; /* Texto blanco */
+            font-size: 1rem;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffcc00 !important; /* Dorado al pasar el mouse */
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+            background-color: #00274d; /* Azul oscuro */
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid #ffcc00; /* Dorado */
+        }
+
+        /* Botones */
+        .btn-primary {
+            background-color: #ffcc00; /* Dorado */
+            border-color: #00274d; /* Azul oscuro */
+            color: #00274d; /* Texto azul oscuro */
+        }
+
+        .btn-primary:hover {
+            background-color: #004080; /* Azul intermedio */
+            border-color: #ffcc00; /* Dorado */
+            color: #ffffff; /* Texto blanco */
+        }
+
+        /* Contenedor principal */
+        .container {
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo blanco semitransparente */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Títulos */
+        h1, h2, h3 {
+            color: #ffcc00; /* Dorado */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Enlaces */
+        a {
+            color: #ffcc00; /* Dorado */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffffff; /* Blanco */
+            text-decoration: underline;
+        }
+
+        /* Estilo para tablas */
+        table {
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+            color: #000000; /* Texto negro */
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ddd; /* Bordes grises */
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #ffcc00; /* Dorado */
+            color: #00274d; /* Texto azul oscuro */
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+        }
+
+        table tr:hover {
+            background-color: #ddd; /* Fondo gris más oscuro al pasar el mouse */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AndradeR_LigaPro_Clase03</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,13 +127,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Equipo" asp-action="ListaEquipos">Tabla De Posiciones</a>
+                            <a class="nav-link" asp-area="" asp-controller="Equipo" asp-action="ListaEquipos">Tabla De Posiciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Equipo" asp-action="Info">Estadisticas equipos</a>
+                            <a class="nav-link" asp-area="" asp-controller="Equipo" asp-action="Info">Estadisticas equipos</a>
                         </li>
                     </ul>
                 </div>
@@ -39,10 +146,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer">
         <div class="container text-center">
             <p>&copy; 2025 - Rodrigo Andrade</p>
-            <p>Ingenieria en Softwaare</p>
+            <p>Ingenieria en Software</p>
             <p>Yolo</p>
         </div>
     </footer>

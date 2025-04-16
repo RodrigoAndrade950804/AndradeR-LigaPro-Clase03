@@ -39,8 +39,7 @@
 <div id="resultado" class="mt-3"></div>
 
 <script>
-        //Utilize ia en esta funcion en la parte de enviar datos al servidor, pues no lograba bien actualizar datos
-        function actualizarEquipo() {
+    function actualizarEquipo() {
         const id = $('#Id').val();
         const partidosJugados = parseInt($('#partidosJugados').val()) || 0;
         const partidosGanados = parseInt($('#partidosGanados').val()) || 0;
@@ -55,9 +54,11 @@
             PartidosPerdidos: partidosPerdidos
         };
 
-        // Mostrar el mensaje de puntos
+        // Calcular los puntos
         const puntos = (partidosGanados * 3) + partidosEmpatados;
-        $('#resultado').html(<p class="alert alert-info">El equipo tiene <strong>${puntos}</strong> puntos.</p>);
+
+        // Mostrar los puntos calculados
+        $('#resultado').html(`<p class="alert alert-info">El equipo tiene <strong>${puntos}</strong> puntos.</p>`);
 
         // Enviar los datos al servidor
         $.ajax({
@@ -67,18 +68,17 @@
             data: JSON.stringify(equipo),
             success: function (response) {
                 if (response.success) {
-                    alert(response.message);
-
+                    // Mostrar mensaje de éxito
+                    $('#resultado').append(`<p class="alert alert-success mt-2">${response.message}</p>`);
                 } else {
-                    alert(response.message);
+                    // Mostrar mensaje de error
+                    $('#resultado').append(`<p class="alert alert-danger mt-2">${response.message}</p>`);
                 }
             },
             error: function () {
-                alert('Ocurrió un error al actualizar el equipo.');
+                $('#resultado').append('<p class="alert alert-danger mt-2">Ocurrió un error al actualizar el equipo.</p>');
             }
         });
     }
-
-
-
 </script>
+
